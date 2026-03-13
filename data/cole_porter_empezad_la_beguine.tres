@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://dlphk0c3ps4qx"]
+
+[ext_resource type="AudioStream" uid="uid://4lnl6fge6qhp" path="res://audio/ColePorter_EmpezadLaBeguine.ogg" id="1_bb6xr"]
+[ext_resource type="Script" uid="uid://cequwlwdydfmd" path="res://scripts/song.gd" id="1_e1qg3"]
+
+[resource]
+script = ExtResource("1_e1qg3")
+title = "Empezad La Beguine"
+artist = "Cole Porter"
+audio_stream = ExtResource("1_bb6xr")
+metadata/_custom_type_script = "uid://cequwlwdydfmd"

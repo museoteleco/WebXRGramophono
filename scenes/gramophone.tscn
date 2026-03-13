@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://cg6lbg7tcacmj"]
+
+[ext_resource type="PackedScene" uid="uid://bgc1qkeq0l76u" path="res://models/gramophone/glb/gramophone.glb" id="1_dylsv"]
+[ext_resource type="Script" uid="uid://df4j64fa1wfle" path="res://scripts/gramophone/gramophone.gd" id="1_ouked"]
+[ext_resource type="PackedScene" uid="uid://dkyp2218x3gtw" path="res://scenes/lid.tscn" id="2_grppd"]
+[ext_resource type="PackedScene" uid="uid://ygp2w4a1evh" path="res://scenes/filter_snap_zone.tscn" id="2_tqyvr"]
+[ext_resource type="PackedScene" uid="uid://dnll2qmsm8jm7" path="res://scenes/vinyl_snap_zone.tscn" id="4_lo2t4"]
+[ext_resource type="PackedScene" uid="uid://dwienhj3didby" path="res://scenes/vinyl_cole_porter.tscn" id="5_dcy10"]
+[ext_resource type="PackedScene" uid="uid://cfnicgoc46ii" path="res://scenes/brake.tscn" id="8_grppd"]
+[ext_resource type="PackedScene" uid="uid://dcf6yl2uhhulf" path="res://scenes/crank_snap_zone.tscn" id="9_2d80k"]
+[ext_resource type="PackedScene" uid="uid://p2k7wfjq40j8" path="res://scenes/vinyl_conchita_martinez.tscn" id="9_dcquk"]
+[ext_resource type="PackedScene" uid="uid://dlno1p8v2ybw" path="res://scenes/filter.tscn" id="9_tykl6"]
+[ext_resource type="PackedScene" uid="uid://75bjk40cn1kv" path="res://scenes/vinyl_alejandro_ulloa.tscn" id="10_dcquk"]
+[ext_resource type="PackedScene" uid="uid://ddfxisqbepnop" path="res://scenes/crank_pickable.tscn" id="11_grppd"]
+[ext_resource type="PackedScene" uid="uid://bhenaq4xt857k" path="res://scenes/crank_crankable.tscn" id="12_2d80k"]
+[ext_resource type="PackedScene" uid="uid://dkjfrdosmnpoy" path="res://scenes/vinyl_pepe_blanco.tscn" id="12_kkau2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kkau2"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_legmv"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yer63"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_legmv")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_legmv"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yer63"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln3yr"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_yer63")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yer63"]
+resource_local_to_scene = true
+margin = 0.0
+radius = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kkau2"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_legmv"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_kkau2")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ln3yr"]
+resource_local_to_scene = true
+margin = 0.0
+radius = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ln3yr"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc4pg"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_ln3yr")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yc4pg"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yc4pg"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c66i1"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_yc4pg")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c66i1"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c66i1"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln7g1"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_c66i1")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ln7g1"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rk540"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tecs"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_rk540")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rp1at"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ln7g1"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp1at"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_ln7g1")
+billboard_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rk540"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7tecs"]
+load_path = "res://.godot/imported/ring.png-34d9c9e9780f2732148a5b14fcac48dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xcii"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_7tecs")
+billboard_mode = 1
+
+[node name="Gramophone" type="Node3D" unique_id=321886581 node_paths=PackedStringArray("audio_player", "lid", "filter", "mounted_filter_snap_zone", "stashed_filter_snap_zone", "crank_pickable", "crank_crankable", "mounted_crank_snap_zone", "stashed_crank_snap_zone", "mounted_vinyl_snap_zone", "vinyl_cole_porter", "stashed_vinyl_snap_zone_cole_porter", "vinyl_conchita_martinez", "stashed_vinyl_snap_zone_conchita_martinez", "vinyl_alejandro_ulloa", "stashed_vinyl_snap_zone_alejandro_ulloa", "vinyl_pepe_blanco", "stashed_vinyl_snap_zone_pepe_blanco", "brake")]
+script = ExtResource("1_ouked")
+audio_player = NodePath("AudioStreamPlayer3D")
+lid = NodePath("Lid")
+filter = NodePath("Filter")
+mounted_filter_snap_zone = NodePath("Base/MountedFilterSnapZone")
+stashed_filter_snap_zone = NodePath("StashedFilterSnapZone")
+crank_pickable = NodePath("CrankPickable")
+crank_crankable = NodePath("CrankCrankable")
+mounted_crank_snap_zone = NodePath("Base/MountedCrankSnapZone")
+stashed_crank_snap_zone = NodePath("Base/StashedCrankSnapZone")
+mounted_vinyl_snap_zone = NodePath("Base/MountedVinylSnapZone")
+vinyl_cole_porter = NodePath("VinylColePorter")
+stashed_vinyl_snap_zone_cole_porter = NodePath("StashedVinylSnapZoneColePorter")
+vinyl_conchita_martinez = NodePath("VinylConchitaMartinez")
+stashed_vinyl_snap_zone_conchita_martinez = NodePath("StashedVinylSnapZoneConchitaMartinez")
+vinyl_alejandro_ulloa = NodePath("VinylAlejandroUlloa")
+stashed_vinyl_snap_zone_alejandro_ulloa = NodePath("StashedVinylSnapZoneAlejandroUlloa")
+vinyl_pepe_blanco = NodePath("VinylPepeBlanco")
+stashed_vinyl_snap_zone_pepe_blanco = NodePath("StashedVinylSnapZonePepeBlanco")
+brake = NodePath("Base/Brake")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1168782758]
+
+[node name="Lid" parent="." unique_id=1657926099 instance=ExtResource("2_grppd")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.1, 0)
+
+[node name="Base" type="Node3D" parent="." unique_id=576678332]
+
+[node name="Model" parent="Base" unique_id=1923143489 instance=ExtResource("1_dylsv")]
+
+[node name="Lid" parent="Base/Model" index="1" unique_id=1299752119]
+visible = false
+
+[node name="Brake" parent="Base/Model" index="2" unique_id=1050048431]
+visible = false
+
+[node name="Crank" parent="Base/Model" index="3" unique_id=780900833]
+visible = false
+
+[node name="Filter" parent="Base/Model" index="4" unique_id=1303877666]
+visible = false
+
+[node name="Tonearm" parent="Base/Model" index="5" unique_id=1953356843]
+visible = false
+
+[node name="Brake" parent="Base" unique_id=916196506 instance=ExtResource("8_grppd")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0997434, 0.100093216, 0.27473375)
+
+[node name="MountedFilterSnapZone" parent="Base" unique_id=2026493253 instance=ExtResource("2_tqyvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.165)
+
+[node name="CollisionShape3D" parent="Base/MountedFilterSnapZone" index="0"]
+shape = SubResource("SphereShape3D_kkau2")
+
+[node name="Highlight" parent="Base/MountedFilterSnapZone" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yer63")
+
+[node name="MountedVinylSnapZone" parent="Base" unique_id=1587507402 instance=ExtResource("4_lo2t4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0.165)
+
+[node name="CollisionShape3D" parent="Base/MountedVinylSnapZone" index="0"]
+shape = SubResource("SphereShape3D_legmv")
+
+[node name="Highlight" parent="Base/MountedVinylSnapZone" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ln3yr")
+
+[node name="MountedCrankSnapZone" parent="Base" unique_id=868124459 instance=ExtResource("9_2d80k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13489938, 0.068458036, 0.13786781)
+
+[node name="CollisionShape3D" parent="Base/MountedCrankSnapZone" index="0"]
+shape = SubResource("SphereShape3D_yer63")
+
+[node name="Highlight" parent="Base/MountedCrankSnapZone" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_legmv")
+
+[node name="StashedCrankSnapZone" parent="Base" unique_id=591006764 instance=ExtResource("9_2d80k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.12, 0.040024713)
+
+[node name="CollisionShape3D" parent="Base/StashedCrankSnapZone" index="0"]
+shape = SubResource("SphereShape3D_ln3yr")
+
+[node name="Highlight" parent="Base/StashedCrankSnapZone" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yc4pg")
+
+[node name="StashedFilterSnapZone" parent="." unique_id=655415567 instance=ExtResource("2_tqyvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0.165)
+
+[node name="CollisionShape3D" parent="StashedFilterSnapZone" index="0"]
+shape = SubResource("SphereShape3D_yc4pg")
+
+[node name="Highlight" parent="StashedFilterSnapZone" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c66i1")
+
+[node name="Filter" parent="." unique_id=2092319985 instance=ExtResource("9_tykl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0.165)
+
+[node name="StashedVinylSnapZoneColePorter" parent="." unique_id=735455890 instance=ExtResource("4_lo2t4")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.25, 0.1, 0.165)
+
+[node name="CollisionShape3D" parent="StashedVinylSnapZoneColePorter" index="0"]
+shape = SubResource("SphereShape3D_c66i1")
+
+[node name="Highlight" parent="StashedVinylSnapZoneColePorter" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ln7g1")
+
+[node name="VinylColePorter" parent="." unique_id=1605115010 instance=ExtResource("5_dcy10")]
+transform = Transform3D(-0.25881907, 0.9659258, -1.509958e-07, 0.9659258, 0.25881907, 0, 3.9080593e-08, -1.4585075e-07, -1, -0.25, 0.1, 0.165)
+
+[node name="StashedVinylSnapZoneConchitaMartinez" parent="." unique_id=1089353827 instance=ExtResource("4_lo2t4")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.4, 0.1, 0.165)
+
+[node name="CollisionShape3D" parent="StashedVinylSnapZoneConchitaMartinez" index="0"]
+shape = SubResource("SphereShape3D_ln7g1")
+
+[node name="Highlight" parent="StashedVinylSnapZoneConchitaMartinez" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7tecs")
+
+[node name="VinylConchitaMartinez" parent="." unique_id=536170108 instance=ExtResource("9_dcquk")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.4, 0.1, 0.165)
+
+[node name="StashedVinylSnapZoneAlejandroUlloa" parent="." unique_id=865753277 instance=ExtResource("4_lo2t4")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.55, 0.1, 0.165)
+
+[node name="CollisionShape3D" parent="StashedVinylSnapZoneAlejandroUlloa" index="0"]
+shape = SubResource("SphereShape3D_rp1at")
+
+[node name="Highlight" parent="StashedVinylSnapZoneAlejandroUlloa" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rp1at")
+
+[node name="VinylAlejandroUlloa" parent="." unique_id=558212285 instance=ExtResource("10_dcquk")]
+transform = Transform3D(-0.25881907, 0.9659258, 8.742278e-08, 0.9659258, 0.25881907, 0, -2.2626683e-08, 8.444392e-08, -1, -0.55, 0.1, 0.165)
+
+[node name="StashedVinylSnapZonePepeBlanco" parent="." unique_id=416852948 instance=ExtResource("4_lo2t4")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.7, 0.1, 0.165)
+
+[node name="CollisionShape3D" parent="StashedVinylSnapZonePepeBlanco" index="0"]
+shape = SubResource("SphereShape3D_rk540")
+
+[node name="Highlight" parent="StashedVinylSnapZonePepeBlanco" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0xcii")
+
+[node name="VinylPepeBlanco" parent="." unique_id=1951215261 instance=ExtResource("12_kkau2")]
+transform = Transform3D(-0.25881907, 0.9659258, -8.742278e-08, 0.9659258, 0.25881907, 0, 2.2626683e-08, -8.444392e-08, -1, -0.7, 0.1, 0.165)
+
+[node name="CrankPickable" parent="." unique_id=1338096156 instance=ExtResource("11_grppd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.1, 0.02)
+
+[node name="CrankCrankable" parent="." unique_id=1690744803 instance=ExtResource("12_2d80k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15155065, 0.066179566, 0.14647447)
+
+[editable path="Base/Model"]
+[editable path="Base/MountedFilterSnapZone"]
+[editable path="Base/MountedVinylSnapZone"]
+[editable path="Base/MountedCrankSnapZone"]
+[editable path="Base/StashedCrankSnapZone"]
+[editable path="StashedFilterSnapZone"]
+[editable path="StashedVinylSnapZoneColePorter"]
+[editable path="StashedVinylSnapZoneConchitaMartinez"]
+[editable path="StashedVinylSnapZoneAlejandroUlloa"]
+[editable path="StashedVinylSnapZonePepeBlanco"]

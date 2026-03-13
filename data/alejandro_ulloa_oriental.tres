@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://clm6sgpmddvbl"]
+
+[ext_resource type="Script" uid="uid://cequwlwdydfmd" path="res://scripts/song.gd" id="1_1wwnu"]
+[ext_resource type="AudioStream" uid="uid://bjmqafgqd465" path="res://audio/AlejandroUlloa_Oriental.ogg" id="1_ti161"]
+
+[resource]
+script = ExtResource("1_1wwnu")
+title = "Oriental"
+artist = "Alejandro Ulloa"
+audio_stream = ExtResource("1_ti161")
+metadata/_custom_type_script = "uid://cequwlwdydfmd"

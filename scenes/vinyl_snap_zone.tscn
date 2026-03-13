@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnll2qmsm8jm7"]
+
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="1_kbewc"]
+[ext_resource type="Script" uid="uid://cl7mrjyjc3gd4" path="res://scripts/vinyl_snap_zone.gd" id="2_25ijt"]
+[ext_resource type="Material" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tres" id="3_glwgc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_25ijt"]
+resource_local_to_scene = true
+radius = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_fgofx"]
+size = Vector2(0.05, 0.05)
+
+[node name="VinylSnapZone" node_paths=PackedStringArray("highlight") instance=ExtResource("1_kbewc")]
+script = ExtResource("2_25ijt")
+highlight = NodePath("Highlight")
+grab_distance = 0.1
+snap_require = "Vinyls"
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_25ijt")
+
+[node name="Highlight" type="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("QuadMesh_fgofx")
+surface_material_override/0 = ExtResource("3_glwgc")

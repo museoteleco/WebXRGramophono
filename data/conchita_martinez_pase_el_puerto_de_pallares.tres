@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://dig7033amqu58"]
+
+[ext_resource type="AudioStream" uid="uid://dfffg0ifgby44" path="res://audio/ConchitaMartinez_PaseElPuertoDePallares.ogg" id="1_no5al"]
+[ext_resource type="Script" uid="uid://cequwlwdydfmd" path="res://scripts/song.gd" id="1_triko"]
+
+[resource]
+script = ExtResource("1_triko")
+title = "Pase El Puerto De Pallares"
+artist = "Conchita Martinez"
+audio_stream = ExtResource("1_no5al")
+metadata/_custom_type_script = "uid://cequwlwdydfmd"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://w38xc6tkjv3c"]
+
+[ext_resource type="Script" uid="uid://cequwlwdydfmd" path="res://scripts/song.gd" id="1_87yxk"]
+[ext_resource type="AudioStream" uid="uid://7os61s5nr302" path="res://audio/AlejandroUlloa_Sonatina.ogg" id="1_qy0cd"]
+
+[resource]
+script = ExtResource("1_87yxk")
+title = "Sonatina"
+artist = "Alejandro Ulloa"
+audio_stream = ExtResource("1_qy0cd")
+metadata/_custom_type_script = "uid://cequwlwdydfmd"

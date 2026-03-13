@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://be17ke2vdkdu8"]
+
+[ext_resource type="AudioStream" uid="uid://bs86s6r7btl5p" path="res://audio/ColePorter_NocheYDia.ogg" id="1_akqbc"]
+[ext_resource type="Script" uid="uid://cequwlwdydfmd" path="res://scripts/song.gd" id="1_tpu54"]
+
+[resource]
+script = ExtResource("1_tpu54")
+title = "Noche Y Dia"
+artist = "Cole Porter"
+audio_stream = ExtResource("1_akqbc")
+metadata/_custom_type_script = "uid://cequwlwdydfmd"

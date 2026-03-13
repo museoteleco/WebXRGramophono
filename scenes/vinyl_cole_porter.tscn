@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwienhj3didby"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_k71av"]
+[ext_resource type="Script" uid="uid://dkt7xnt7tmgdw" path="res://scripts/vinyl.gd" id="2_p506p"]
+[ext_resource type="Resource" uid="uid://dlphk0c3ps4qx" path="res://data/cole_porter_empezad_la_beguine.tres" id="3_5q42x"]
+[ext_resource type="Resource" uid="uid://be17ke2vdkdu8" path="res://data/cole_porter_noche_y_dia.tres" id="3_5us2q"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="7_mucuw"]
+[ext_resource type="PackedScene" uid="uid://dmbv5u2dwmkye" path="res://models/vinyls/vinyl_cole_porter/glb/vinyl_cole_porter.glb" id="7_n8xky"]
+[ext_resource type="Shader" uid="uid://bf8r6qih2b0fp" path="res://shaders/outline.gdshader" id="7_quk78"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5q42x"]
+height = 0.03
+radius = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgpvc"]
+render_priority = 0
+shader = ExtResource("7_quk78")
+shader_parameter/shell_thickness = 0.002
+shader_parameter/shell_color = Color(0.85098, 0.533333, 0.478431, 0.2)
+shader_parameter/glow_speed = 3.0
+shader_parameter/glow_min = 0.7
+shader_parameter/glow_max = 1.0
+
+[node name="VinylColePorter" node_paths=PackedStringArray("outline") groups=["Vinyls"] instance=ExtResource("1_k71av")]
+freeze = true
+script = ExtResource("2_p506p")
+outline = NodePath("SnapPivot/Outline/Exterior")
+_song_a = ExtResource("3_5q42x")
+_song_b = ExtResource("3_5us2q")
+ranged_grab_method = 0
+second_hand_grab = 1
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CylinderShape3D_5q42x")
+
+[node name="SnapPivot" type="Node3D" parent="." index="1"]
+
+[node name="GrabPointSnap" parent="SnapPivot" index="0" instance=ExtResource("7_mucuw")]
+
+[node name="Model" parent="SnapPivot" index="1" instance=ExtResource("7_n8xky")]
+
+[node name="Outline" parent="SnapPivot" index="2" instance=ExtResource("7_n8xky")]
+
+[node name="Grooves" parent="SnapPivot/Outline" index="0"]
+visible = false
+
+[node name="Label1" parent="SnapPivot/Outline" index="1"]
+visible = false
+
+[node name="Exterior" parent="SnapPivot/Outline" index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_lgpvc")
+
+[node name="Label2" parent="SnapPivot/Outline" index="3"]
+visible = false
+
+[editable path="SnapPivot/Model"]
+[editable path="SnapPivot/Outline"]

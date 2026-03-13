@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://clc5dre31iskm"]
+
+[ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ljt1b"]
+[ext_resource type="Texture2D" uid="uid://dm5reoadhrugk" path="res://images/area_de_fondo_logo.png" id="2_6usoh"]
+[ext_resource type="Texture2D" uid="uid://kgm16203cgsu" path="res://images/etsit_logo.png" id="3_55ygf"]
+[ext_resource type="Texture2D" uid="uid://bl6pfaj7ogh4s" path="res://images/museus_upv_logo.png" id="4_ksx7a"]
+[ext_resource type="Texture2D" uid="uid://ctx7jccr8wsfa" path="res://images/vicente_miralles_segarra_logo.png" id="5_ei08p"]
+
+[node name="StartXR" type="Node" unique_id=1324749743]
+script = ExtResource("1_ljt1b")
+
+[node name="EnterWebXR" type="CanvasLayer" parent="." unique_id=510338432]
+
+[node name="ColorRect" type="ColorRect" parent="EnterWebXR" unique_id=1485478618]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo1" type="TextureRect" parent="EnterWebXR" unique_id=1247460660]
+offset_left = 70.0
+offset_top = 206.0
+offset_right = 442.0
+offset_bottom = 402.0
+texture = ExtResource("2_6usoh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Logo2" type="TextureRect" parent="EnterWebXR" unique_id=71385159]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -413.0
+offset_top = 236.0
+offset_right = -68.0
+offset_bottom = 384.0
+grow_horizontal = 0
+texture = ExtResource("3_55ygf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Logo3" type="TextureRect" parent="EnterWebXR" unique_id=1441850229]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -428.0
+offset_top = 29.0
+offset_right = -61.0
+offset_bottom = 208.0
+grow_horizontal = 0
+texture = ExtResource("4_ksx7a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Logo4" type="TextureRect" parent="EnterWebXR" unique_id=481370915]
+offset_left = 70.0
+offset_top = 56.0
+offset_right = 522.0
+offset_bottom = 163.0
+texture = ExtResource("5_ei08p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnterVRButton" type="Button" parent="EnterWebXR" unique_id=2064707336]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -148.0
+offset_right = 132.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Enter VR"
+
+[connection signal="pressed" from="EnterWebXR/EnterVRButton" to="." method="_on_enter_webxr_button_pressed"]

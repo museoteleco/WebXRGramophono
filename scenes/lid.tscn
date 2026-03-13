@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://dkyp2218x3gtw"]
+
+[ext_resource type="Script" uid="uid://cqcyu4xtlmrmd" path="res://scripts/gramophone/lid.gd" id="1_1d3uv"]
+[ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="2_3bvbm"]
+[ext_resource type="Script" uid="uid://csfll1f4nlo0t" path="res://scripts/interactable_hinge_scoped.gd" id="3_afme5"]
+[ext_resource type="PackedScene" uid="uid://bgc1qkeq0l76u" path="res://models/gramophone/glb/gramophone.glb" id="3_vtf6h"]
+[ext_resource type="Shader" uid="uid://bf8r6qih2b0fp" path="res://shaders/outline.gdshader" id="4_afme5"]
+[ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="5_mdtl4"]
+[ext_resource type="Script" uid="uid://e42scrfnqf85" path="res://scripts/gramophone/tonearm.gd" id="6_3bvbm"]
+
+[sub_resource type="Animation" id="Animation_arv0u"]
+resource_name = "Closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-40.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dcy10"]
+resource_name = "Opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-50.0, -90.0]
+}
+
+[sub_resource type="Animation" id="Animation_kj84m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj84m"]
+_data = {
+&"Closing": SubResource("Animation_arv0u"),
+&"Opening": SubResource("Animation_dcy10"),
+&"RESET": SubResource("Animation_kj84m")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arv0u"]
+render_priority = 0
+shader = ExtResource("4_afme5")
+shader_parameter/shell_thickness = 0.002
+shader_parameter/shell_color = Color(0.85098, 0.533333, 0.478431, 0.2)
+shader_parameter/glow_speed = 3.0
+shader_parameter/glow_min = 0.7
+shader_parameter/glow_max = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcy10"]
+size = Vector3(0.3, 0.32, 0.1)
+
+[sub_resource type="Animation" id="Animation_vtf6h"]
+resource_name = "Mounting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-35.0, -55.0]
+}
+
+[sub_resource type="Animation" id="Animation_afme5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mdtl4"]
+resource_name = "Stashing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableHinge:hinge_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-20.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdtl4"]
+_data = {
+&"Mounting": SubResource("Animation_vtf6h"),
+&"RESET": SubResource("Animation_afme5"),
+&"Stashing": SubResource("Animation_mdtl4")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bvbm"]
+render_priority = 0
+shader = ExtResource("4_afme5")
+shader_parameter/shell_thickness = 0.002
+shader_parameter/shell_color = Color(0.85098, 0.533333, 0.478431, 0.2)
+shader_parameter/glow_speed = 3.0
+shader_parameter/glow_min = 0.7
+shader_parameter/glow_max = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d3uv"]
+size = Vector3(0.22141114, 0.07602539, 0.068554685)
+
+[node name="Lid" type="Node3D" node_paths=PackedStringArray("outline", "animation_player", "interactable_hinge", "interactable_handle", "tonearm")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_1d3uv")
+outline = NodePath("InteractableHinge/Outline/Lid")
+animation_player = NodePath("AnimationPlayer")
+interactable_hinge = NodePath("InteractableHinge")
+interactable_handle = NodePath("InteractableHinge/HandleOrigin/InteractableHandle")
+tonearm = NodePath("InteractableHinge/Tonearm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kj84m")
+}
+
+[node name="InteractableHinge" parent="." instance=ExtResource("2_3bvbm")]
+script = ExtResource("3_afme5")
+hinge_limit_min = -90.0
+hinge_limit_max = 0.0
+
+[node name="Model" parent="InteractableHinge" instance=ExtResource("3_vtf6h")]
+
+[node name="Base" parent="InteractableHinge/Model" index="0"]
+visible = false
+
+[node name="Brake" parent="InteractableHinge/Model" index="2"]
+visible = false
+
+[node name="Crank" parent="InteractableHinge/Model" index="3"]
+visible = false
+
+[node name="Filter" parent="InteractableHinge/Model" index="4"]
+visible = false
+
+[node name="Tonearm" parent="InteractableHinge/Model" index="5"]
+visible = false
+
+[node name="Outline" parent="InteractableHinge" instance=ExtResource("3_vtf6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, 0, 0)
+
+[node name="Base" parent="InteractableHinge/Outline" index="0"]
+visible = false
+
+[node name="Lid" parent="InteractableHinge/Outline" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_arv0u")
+
+[node name="Brake" parent="InteractableHinge/Outline" index="2"]
+visible = false
+
+[node name="Crank" parent="InteractableHinge/Outline" index="3"]
+visible = false
+
+[node name="Filter" parent="InteractableHinge/Outline" index="4"]
+visible = false
+
+[node name="Tonearm" parent="InteractableHinge/Outline" index="5"]
+visible = false
+
+[node name="HandleOrigin" type="Node3D" parent="InteractableHinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, -0.05)
+
+[node name="InteractableHandle" parent="InteractableHinge/HandleOrigin" instance=ExtResource("5_mdtl4")]
+snap_distance = 0.1
+ranged_grab_method = 0
+second_hand_grab = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableHinge/HandleOrigin/InteractableHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+shape = SubResource("BoxShape3D_dcy10")
+
+[node name="Tonearm" type="Node3D" parent="InteractableHinge" node_paths=PackedStringArray("outline", "animation_player", "interactable_hinge", "interactable_handle")]
+transform = Transform3D(0.15643446, 0.98768824, 0, -0.98392975, 0.1558392, -0.08715573, -0.08608269, 0.013634161, 0.99619466, 0.08, 0.085, -0.025)
+script = ExtResource("6_3bvbm")
+outline = NodePath("InteractableHinge/Outline/Tonearm")
+animation_player = NodePath("AnimationPlayer")
+interactable_hinge = NodePath("InteractableHinge")
+interactable_handle = NodePath("InteractableHinge/HandleOrigin/InteractableHandle")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractableHinge/Tonearm"]
+libraries = {
+&"": SubResource("AnimationLibrary_mdtl4")
+}
+
+[node name="InteractableHinge" parent="InteractableHinge/Tonearm" instance=ExtResource("2_3bvbm")]
+script = ExtResource("3_afme5")
+hinge_limit_min = -55.0
+hinge_limit_max = 0.0
+
+[node name="Model" parent="InteractableHinge/Tonearm/InteractableHinge" instance=ExtResource("3_vtf6h")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Base" parent="InteractableHinge/Tonearm/InteractableHinge/Model" index="0"]
+visible = false
+
+[node name="Lid" parent="InteractableHinge/Tonearm/InteractableHinge/Model" index="1"]
+visible = false
+
+[node name="Brake" parent="InteractableHinge/Tonearm/InteractableHinge/Model" index="2"]
+visible = false
+
+[node name="Crank" parent="InteractableHinge/Tonearm/InteractableHinge/Model" index="3"]
+visible = false
+
+[node name="Filter" parent="InteractableHinge/Tonearm/InteractableHinge/Model" index="4"]
+visible = false
+
+[node name="Outline" parent="InteractableHinge/Tonearm/InteractableHinge" instance=ExtResource("3_vtf6h")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="Base" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="0"]
+visible = false
+
+[node name="Lid" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="1"]
+visible = false
+
+[node name="Brake" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="2"]
+visible = false
+
+[node name="Crank" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="3"]
+visible = false
+
+[node name="Filter" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="4"]
+visible = false
+
+[node name="Tonearm" parent="InteractableHinge/Tonearm/InteractableHinge/Outline" index="5"]
+surface_material_override/3 = SubResource("ShaderMaterial_3bvbm")
+
+[node name="HandleOrigin" type="Node3D" parent="InteractableHinge/Tonearm/InteractableHinge"]
+transform = Transform3D(1, 1.4901161e-08, -1.490118e-08, -1.522465e-08, 1, 4.4703484e-08, -7.1054274e-15, 2.8498593e-15, 1.000001, -0.01, -0.085, 0.02)
+
+[node name="InteractableHandle" parent="InteractableHinge/Tonearm/InteractableHinge/HandleOrigin" instance=ExtResource("5_mdtl4")]
+snap_distance = 0.1
+ranged_grab_method = 0
+second_hand_grab = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableHinge/Tonearm/InteractableHinge/HandleOrigin/InteractableHandle"]
+transform = Transform3D(-0.00032686442, -0.99979347, 0.020326508, 0.9732674, 0.004350461, 0.2296359, -0.22967684, 0.019858167, 0.973065, 0, 0, 0)
+shape = SubResource("BoxShape3D_1d3uv")
+
+[editable path="InteractableHinge/Model"]
+[editable path="InteractableHinge/Outline"]
+[editable path="InteractableHinge/Tonearm/InteractableHinge/Model"]
+[editable path="InteractableHinge/Tonearm/InteractableHinge/Outline"]
