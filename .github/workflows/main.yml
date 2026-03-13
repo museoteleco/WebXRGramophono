@@ -6,44 +6,33 @@ on:
       - main
 
 jobs:
-  # job id, can be anything
-  export_game:
-    # Always use ubuntu-latest for this action
+  build-and-deploy:
     runs-on: ubuntu-latest
-    # Add permission for release creation. Can be made narrower according to your needs
     permissions:
       contents: write
-    # Job name, can be anything
-    name: Export Game
+    name: Build & Deploy
     steps:
-      # Always include the checkout step so that 
-      # your project is available for Godot to export
-    - name: checkout
-      uses: actions/checkout@v5
-  
-    - name: export game
-      id: export
-      # Use latest version (see releases for all versions)
-      uses: firebelley/godot-export@v7.0.0
-      with:
-        # Defining all the required inputs
-        godot_executable_download_url: https://downloads.godotengine.org/?version=4.6&flavor=stable&slug=linux.x86_64.zip&platform=linux.64
-        godot_export_templates_download_url: https://downloads.godotengine.org/?version=4.6&flavor=stable&slug=export_templates.tpz&platform=templates
-        relative_project_path: ./
-        cache: true
-        archive_output: false
-        use_preset_export_path: true
-        
-    # Move files out of the "Web" folder so they go directly into gh-pages root
-    - name: Move Web export files to root
-      run: |
-        mv ./exports/web/Web/* ./exports/web/
-        rm -rf ./exports/web/Web
+      - name: Checkout Source Code
+        uses: actions/checkout@v5
 
-      # This release action has worked well for me. However, you can most likely use any release action of your choosing.
-      # https://github.com/ncipollo/release-action
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./exports/web
+      - name: Export Godot Project
+        id: export
+        uses: firebelley/godot-export@v7.0.0
+        with:
+          godot_executable_download_url: https://downloads.godotengine.org/?version=4.6&flavor=stable&slug=linux.x86_64.zip&platform=linux.64
+          godot_export_templates_download_url: https://downloads.godotengine.org/?version=4.6&flavor=stable&slug=export_templates.tpz&platform=templates
+          relative_project_path: ./
+          cache: true
+          archive_output: false
+          use_preset_export_path: true
+
+      - name: Prepare Web Assets
+        run: |
+          mv ./exports/web/Web/* ./exports/web/
+          rm -rf ./exports/web/Web
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./exports/web
